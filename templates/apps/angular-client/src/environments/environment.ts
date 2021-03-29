@@ -4,6 +4,11 @@
 
 export const environment = {
   production: false,
+  sanity: {
+    projectId: 'vxqbsuag',
+    dataset: 'production',
+    useCdn: true
+  }
 };
 
 /*

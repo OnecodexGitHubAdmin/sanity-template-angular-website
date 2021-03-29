@@ -1,0 +1,3 @@
+<ng-container *ngIf="$contentObservable | async as content">
+  <templates-component-template [item]="content"></templates-component-template>
+</ng-container>
