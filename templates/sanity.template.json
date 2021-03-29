@@ -33,9 +33,9 @@
         "type": "web",
         "title": "Pre-rendered angular client",
         "description": "This is your final website. It is built with angular and rendered using scully.io",
-        "dir": "./apps/site-directory",
+        "dir": "./apps/angular-client",
         "buildSettings": {
-          "base": "apps/site-directory",
+          "base": "apps/angular-client",
           "dir": "dist",
           "cmd": "npm run build"
         },
