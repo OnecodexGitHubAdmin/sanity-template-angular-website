@@ -27,7 +27,10 @@
     "dep-graph": "nx dep-graph",
     "help": "nx help",
     "scully": "npx scully --",
-    "scully:serve": "npx scully serve --"
+    "scully:serve": "npx scully serve --",
+    "serve:all": " nx run-many --target=serve --all --parallel",
+    "test:all": " nx run-many --target=test --all --parallel",
+    "build:all": " nx run-many -- --target=build --all --parallel"
   },
   "private": true,
   "dependencies": {

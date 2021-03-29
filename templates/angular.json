@@ -142,6 +142,34 @@
           }
         }
       }
+    },
+    "studio": {
+      "root": "apps/studio",
+      "sourceRoot": "apps/studio",
+      "projectType": "application",
+      "prefix": "templates",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "npm run build",
+            "cwd": "apps/studio"
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "npm run dev",
+            "cwd": "apps/studio"
+          }          
+        },
+        "test": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "npm run test"
+          }
+        }
+      }
     }
   }
 }
