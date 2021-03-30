@@ -12,13 +12,12 @@ import { TestComponent } from '../elements/test/test.component';
 })
 export class ContentComponent {
 
+  content: ComponentItem;
   $contentObservable: Observable<ComponentItem>;
 
   constructor(service: SanityService) {
-    debugger;
     this.$contentObservable = service.fetchContent(window.location.pathname).pipe(
       map((a: any) => {
-        debugger;
         return new ComponentItem(TestComponent, a);
       })
     );

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { TransferStateService } from '@scullyio/ng-lib';
 import { from, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -9,17 +10,38 @@ import { environment } from '../../environments/environment';
 })
 export class SanityService {
 
-  fetchContent(name: string): Observable<any> {
-    const client = this.createClient();
-
-    name = `${name}`;
-    return from(client.fetch(`*[_type == "page" && identifier == "${name}"][0]`));
+  constructor(private transferStateService: TransferStateService) {
   }
 
-  fetchNavigation(): Observable<any[]> {
+  fetchContent(name: string): Observable<any> {
+    const client = this.createClient();
+    name = `${name}`;
+
+    const observable = from(client.fetch(`*[_type == "page" && identifier == "${name}"][0]`)).pipe(
+      map((a: any) => {
+        console.log(a);
+        return a;
+      })
+    );
+
+    return this.transferStateService.useScullyTransferState('data', observable);
+  }
+
+  fetchSiteConfig(): Observable<any> {
     const client = this.createClient();
     // eslint-disable-next-line max-len
-    return from(client.fetch('*[_type == "navigationTreeItem"]')).pipe(
+    return from(client.fetch('*[_type == "site-config"]')).pipe(
+      map((a: any) => {
+        console.log(a);
+        return a;
+      })
+    );
+  }
+
+  fetchNavigation(): Promise<string[]> {
+    const client = this.createClient();
+    // eslint-disable-next-line max-len
+    return client.fetch('*[_type == "navigationTreeItem"]').pipe(
       map((results: any[]) => results.map((r: any) => this.mapResult(r)))
     );
   }
@@ -42,7 +64,7 @@ export class SanityService {
     const client = sanityClient({
       projectId: environment.sanity.projectId,
       dataset: environment.sanity.dataset,
-      useCdn: environment.sanity.useCdn
+      useCdn: false
     });
 
     return client;

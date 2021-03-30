@@ -8,26 +8,26 @@ import { ComponentItem } from '../../models/component-item';
   templateUrl: './component-template.component.html',
   styleUrls: ['./component-template.component.scss']
 })
-export class ComponentTemplateComponent implements OnInit {
+export class ComponentTemplateComponent {
 
-  @Input() item: ComponentItem;
+  @Input() set item(itm: ComponentItem) {
+    if (itm) {
+      this.loadComponents(itm);
+    }
+  };
+
   @ViewChild(ComponentHostDirective, {static: true}) componentHost: ComponentHostDirective;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
 
-  ngOnInit(): void {
-    this.loadComponents();
-  }
+  loadComponents(item: ComponentItem): void {
 
-
-  loadComponents(): void {
-
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(this.item.component);
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(item.component);
 
     const viewContainerRef = this.componentHost.viewContainerRef;
     viewContainerRef.clear();
 
     const componentRef = viewContainerRef.createComponent<DynamicComponent>(componentFactory);
-    componentRef.instance.data = this.item.data;
+    componentRef.instance.data = item.data;
   }
 }

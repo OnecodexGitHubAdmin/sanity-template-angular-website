@@ -7,6 +7,8 @@
   <h1>Welcome to {{ title }}!</h1>
 </header>
 <main>
+  <!-- <div>{{routeList | json}}</div> -->
+  <<ng-container *ngIf="$contentObservable | async as config">{{config |json}}</ng-container>
   <h2>Resources &amp; Tools</h2>
   <router-outlet></router-outlet>
   <p>Thank you for using and showing some ♥ for Nx.</p>
