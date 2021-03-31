@@ -6,7 +6,7 @@ export default {
   title: 'Site configuration',
   // https://www.sanity.io/docs/experimental/ui-affordances-for-actions
   __experimental_actions: [/* create, delete, */ 'update', 'publish'],
-  fieldsets: [{ name: 'footer', title: 'Footer' }],
+  fieldsets: [{ name: 'footer', title: 'Footer' }, { name: 'copyright', title: 'Copyright' }],
   fields: [
     {
       name: 'title',
@@ -18,23 +18,6 @@ export default {
       name: 'url',
       type: 'url',
       description: 'The main site url. Used to create canonical url',
-    },
-    {
-      name: 'frontpage',
-      type: 'reference',
-      description: 'Choose page to be the frontpage',
-      to: { type: 'page' },
-    },
-    {
-      title: 'Site language',
-      description:
-        'Should be a valid bcp47 language code like en, en-US, no or nb-NO',
-      name: 'lang',
-      type: 'string',
-      validation: Rule =>
-        Rule.custom(lang =>
-          bcp47.parse(lang) ? true : 'Please use a valid bcp47 code'
-        ),
     },
     {
       title: 'Brand logo',
@@ -87,9 +70,32 @@ export default {
       ],
     },
     {
+      title: 'Social Media Links',
+      name: 'socialMediaLinks',
+      type: 'array',
+      fieldset: 'footer',
+      of: [
+        {
+          type: 'tag'
+        },
+      ],
+    },
+    {
       name: 'footerText',
       type: 'portableText',
       fieldset: 'footer',
+    },
+    {
+      name: 'copyrightDate',
+      Title: 'Copyright Date From',
+      type: 'date',
+      fieldset: 'copyright',
+    },
+    {
+      name: 'copyrightText',
+      Title: 'Text',
+      type: 'string',
+      fieldset: 'copyright',
     },
   ],
 };

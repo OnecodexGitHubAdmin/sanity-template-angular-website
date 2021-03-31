@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
-import { ScullyRoute, ScullyRoutesService, TransferStateService } from '@scullyio/ng-lib';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { TestComponent } from './components/elements/test/test.component';
-import { ComponentItem } from './models/component-item';
+import { SiteConfig } from './models/types/site-config';
 import { SanityService } from './services/sanity.service';
 
 @Component({
@@ -13,25 +11,13 @@ import { SanityService } from './services/sanity.service';
 })
 export class AppComponent {
   title = 'angular-client';
-  //routeList: ScullyRoute[];
-  $contentObservable: Observable<any>;
+  $contentObservable: Observable<SiteConfig>;
+  image: string;
+  currentDate = new Date();
 
-  constructor(private srs: ScullyRoutesService, private service: SanityService) {
-    // this.srs.available$.pipe(
-    //   map((routeList: ScullyRoute[]) => {
-    //     this.routeList = routeList;
-    //   })
-    // ).subscribe();
-
-
-    
-
-    //this.$contentObservable = this.transferStateService.getState<ComponentItem>('data')
-    
-    this.$contentObservable = service.fetchSiteConfig().pipe(
-      map((a: any) => {
-        console.log('config', a);
-      })
-    );
+  constructor(service: SanityService) {    
+    this.$contentObservable = service.fetchSiteConfig().pipe(map((config: SiteConfig) => {
+      return config;
+    }));
   }
 }

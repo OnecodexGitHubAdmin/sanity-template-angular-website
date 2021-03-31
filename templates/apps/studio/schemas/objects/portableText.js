@@ -17,7 +17,6 @@ export default {
         decorators: [
           { title: 'Strong', value: 'strong' },
           { title: 'Emphasis', value: 'em' },
-          { title: 'Code', value: 'code' },
         ],
         annotations: [{ type: 'link' }, { type: 'internalLink' }],
       },
@@ -27,10 +26,7 @@ export default {
       type: 'embedHTML',
     },
     {
-      type: 'textSectionLinkItem'
-    },
-    {
-      type: 'table'
+      type: 'code',
     }
   ],
 };

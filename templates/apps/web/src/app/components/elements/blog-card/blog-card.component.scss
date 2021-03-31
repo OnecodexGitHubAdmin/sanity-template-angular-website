@@ -1,0 +1,18 @@
+:host {
+  padding: 15px;
+  background-color: var(--primary);
+  color: white;
+  opacity: 0.8;
+}
+
+.button {
+  text-transform: uppercase;
+  padding: 5px;
+  border: 2px solid white;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  color: white;
+  margin-top: 50px;
+  margin-bottom: 15px;
+}

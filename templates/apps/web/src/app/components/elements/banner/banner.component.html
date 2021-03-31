@@ -1,0 +1,7 @@
+<div fxFill fxLayout="row" [ngClass]="['h-' + (banner.headingHAlignment || 'center'), 'v-' + (banner.headingVAlignment || 'center')]">
+  <img *ngIf="imageUrl" [src]="imageUrl">
+  <div class="box" *ngIf="banner.title || banner.subtitle || banner.description || banner.ctas?.length">
+    <h1>{{banner.title | uppercase}}</h1>
+    <h3>{{banner.subtitle}}</h3>
+  </div>
+</div>
