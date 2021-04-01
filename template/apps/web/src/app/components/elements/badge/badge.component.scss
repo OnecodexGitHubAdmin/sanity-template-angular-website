@@ -1,0 +1,16 @@
+.badge {
+  background-color: var(--primary);
+  border: 1px solid grey;
+  border-radius: 12.5px;
+  height: 25px;
+  line-height: 25px;
+  min-width: 100px;
+  text-align: center;
+  color: white;
+  margin: 5px;
+  padding: 0 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-decoration: none;
+}

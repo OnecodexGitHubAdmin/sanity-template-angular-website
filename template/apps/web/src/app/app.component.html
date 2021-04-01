@@ -1,0 +1,28 @@
+<ng-container *ngIf="$contentObservable | async as config">
+<div class="container">
+  <header fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.lt-lg="start center">
+    <templates-top-navigation [items]="config.mainNavigation"></templates-top-navigation>
+    <a class="icon" [href]="config.url || '.'" fxLayout="row" fxLayoutGap="25px" fxLayoutAlign="end center">
+      <h1 *ngIf="config.title">{{ config.title }}</h1>
+      <img *ngIf="config.logo?.asset?.url"  [class.lt-md]="mobile"
+        [alt]="config.logo.alt"
+        [src]="config.logo?.asset?.url"    
+      />
+    </a>
+  </header>
+  <main>
+    <router-outlet></router-outlet>
+    <footer>
+      <div class="social-media" *ngIf="config.socialMediaLinks" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="25px">
+        <a *ngFor="let item of config.socialMediaLinks" [href]="item.href || '#'">
+          <img *ngIf="item.image?.asset" [src]="item.image.asset.url" [alt]="item.image.alt"/>
+        </a>
+      </div>
+      <div *ngIf="config.copyrightText || config.copyrightDate">
+        &copy; {{config.copyrightDate ? ((config.copyrightDate | date:'yyyy') + '-' +  (currentDate | date:'yyyy')) : ''}} {{config.copyrightText || ''}}
+      </div>
+    </footer>
+  </main>
+</div>
+</ng-container>
+
