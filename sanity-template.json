@@ -4,7 +4,6 @@
   "description": "This template provides an angular client which is pre-rendered using scully.io. You can use it for building any website or even a webshop since sanity.io provides everything for both. The sanity.io studio itself is build with react.",
   "previewMedia": {
     "type": "image",
-    "src": "template/assets/path-to-preview-image.png",
     "alt": "Sanity.io Angular Scully.io Nx Template"
   },
   
