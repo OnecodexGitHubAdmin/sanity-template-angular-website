@@ -1,0 +1,10 @@
+<ng-container *ngIf="$feedbackObservable | async as feebackList">
+  <div *ngFor="let feedback of feebackList; let i = index" [class.hidden]="i !== currentIndex">
+    <img *ngIf="feedback.image?.asset" [src]="feedback.image.asset.url" [alt]="feedback.image.alt"/>
+    <p>«{{ feedback.text }}»</p>
+    <p>{{ feedback.customer }}</p>
+    <p>
+      <small>{{ feedback._createdAt | date: 'dd.MM.yyyy' }}</small>
+    </p>
+  </div>
+</ng-container>

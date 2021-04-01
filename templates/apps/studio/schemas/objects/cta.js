@@ -25,6 +25,16 @@ export default {
       type: 'string',
       fieldset: 'link',
     },
+    {
+      title: 'Internal Route',
+      name: 'route',
+      type: 'reference',
+      to: [
+        {
+          type: 'route',
+        },
+      ],
+    },
   ],
   preview: {
     select: {

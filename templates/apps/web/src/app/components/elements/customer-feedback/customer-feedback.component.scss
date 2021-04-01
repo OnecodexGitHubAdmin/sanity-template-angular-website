@@ -1,0 +1,18 @@
+div {
+  padding: 25px;
+  text-align: center;
+  background-color: var(--primary);
+  color: white;
+
+  img {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+
+    object-fit: cover;
+  }
+}
+
+.hidden {
+  display: none;
+}

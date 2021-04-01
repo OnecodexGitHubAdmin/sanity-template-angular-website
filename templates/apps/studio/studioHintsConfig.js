@@ -1,3 +1,3 @@
 export default {
-  templateRepoId: 'sanity-io/sanity-template-nextjs-landing-pages'
+  templateRepoId: 'sanity-io/sanity-template-angular-website'
 }

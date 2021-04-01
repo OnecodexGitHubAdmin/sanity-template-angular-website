@@ -1,0 +1,9 @@
+
+<ng-container *ngIf="$routeObservable | async as route"></ng-container><div fxFill fxLayout="row" [ngClass]="['h-' + (banner.headingHAlignment || 'center'), 'v-' + (banner.headingVAlignment || 'center')]">
+  <img *ngIf="imageUrl" [src]="imageUrl" [alt]="banner.image?.alt">
+  <div class="box" *ngIf="banner.title || banner.subtitle || banner.description || banner.ctas?.length">
+    <h1>{{banner.title | uppercase}}</h1>
+    <h3>{{banner.subtitle}}</h3>
+    <templates-button *ngFor="let cta of banner.ctas" [route]="cta.link" [title]="cta.title"></templates-button>
+  </div>
+</div>
