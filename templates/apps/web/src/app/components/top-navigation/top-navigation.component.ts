@@ -7,5 +7,7 @@ import { Route } from '../../models/types/route';
   styleUrls: ['./top-navigation.component.scss']
 })
 export class TopNavigationComponent {
-  @Input() items: Route[]
+  @Input() items: Route[];
+
+  showMenu: boolean;
 }

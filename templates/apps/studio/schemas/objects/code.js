@@ -1,8 +1,8 @@
 import React from 'react';
 
-const HTMLpreview = ({ value }) => (
+const CodePreview = ({ value }) => (
   // eslint-disable-next-line
-  <div dangerouslySetInnerHTML={{ __html: value.html }} />
+  <pre>{ value.code }</pre>
 );
 
 export default {
@@ -23,5 +23,6 @@ export default {
     select: {
       code: 'code',
     },
+    component: CodePreview,
   },
 };

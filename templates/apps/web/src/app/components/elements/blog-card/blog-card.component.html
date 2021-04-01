@@ -4,5 +4,5 @@
   <div>
     <templates-badge *ngFor="let tag of post.tags" [tag]="tag"></templates-badge>
   </div>
-  <a class="button" *ngIf="post.route?.current" [href]="post.route.current">{{'Read more' | uppercase}}</a>
+  <templates-button *ngIf="post.route?.current" [route]="post.route.current" [title]="'Read more'"></templates-button>
 </div>

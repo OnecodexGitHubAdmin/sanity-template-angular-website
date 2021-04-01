@@ -11,7 +11,7 @@ export default {
       title: 'Blog References',
       of: [
         {
-          name: blog,
+          name: 'blog',
           type: 'reference',
           description: 'Select the blog that this page should point to',
           to: [

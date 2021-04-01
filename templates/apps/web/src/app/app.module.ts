@@ -22,6 +22,7 @@ import { BlogComponent } from './components/elements/blog/blog.component';
 import { BadgeComponent } from './components/elements/badge/badge.component';
 import { BlockChildComponent } from './components/elements/block-child/block-child.component';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
+import { ButtonComponent } from './components/elements/button/button.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { SafeHtmlPipe } from './pipes/safe-html.pipe';
     BlogComponent,
     BadgeComponent,
     BlockChildComponent,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    ButtonComponent
   ],
   imports: [BrowserModule, AppRoutingModule, ScullyLibModule, FlexLayoutModule ],
   providers: [],

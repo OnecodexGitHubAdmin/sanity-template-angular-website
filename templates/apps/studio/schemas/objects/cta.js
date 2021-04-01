@@ -28,7 +28,12 @@ export default {
     {
       title: 'Internal Route',
       name: 'route',
-      type: 'route'
+      type: 'reference',
+      to: [
+        {
+          type: 'route',
+        },
+      ],
     },
   ],
   preview: {

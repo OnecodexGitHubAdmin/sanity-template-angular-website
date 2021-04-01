@@ -22,8 +22,8 @@ export class SanityService {
     const client = this.createClient();
     name = `${name}`;
 
-    const observable = from(client.fetch(`*[_type == "route" && slug.current == "${name}"][0] { page->, blog-> }`)).pipe(
-      map((result: { page: Page, blog: BlogPost }) => {
+    const observable = from(client.fetch(`*[_type == "route" && slug.current == "${name}"][0] { page->, blog->, openGraphImage{asset->}}`))
+      .pipe(map((result: { page: Page, blog: BlogPost }) => {
         return result;
       })
     );
@@ -35,7 +35,7 @@ export class SanityService {
     const client = this.createClient();
     const observable =
       // eslint-disable-next-line max-len
-      from(client.fetch('*[_type == "site-config"] | order(_updatedAt desc) {_type, footerText, title, logo, url, copyrightText, copyrightDate, socialMediaLinks[]{title, href, image{asset->}}, logo{alt, asset->}, mainNavigation[]->, footerNavigation[]-> } [0]'))
+      from(client.fetch('*[_type == "site-config"] | order(_updatedAt desc) {_type, footerText, title, logo, url, copyrightText, copyrightDate, socialMediaLinks[]{title, href, image{asset->}}, logo{alt, asset->}, favicon{alt, asset->}, mainNavigation[]->, footerNavigation[]-> } [0]'))
         .pipe(map((config: SiteConfig) => {
           return {
             ...config,
@@ -68,6 +68,17 @@ export class SanityService {
     );
 
     return this.transferStateService.useScullyTransferState('blogPosts', observable);
+  }
+  
+  fetchRoutes(refs: string[]): Observable<Route[]> {
+    const client = this.createClient();
+    const refString = JSON.stringify(refs);
+    // eslint-disable-next-line max-len
+    const observable = from(client.fetch(`*[_type == "route" && _id in ${refString}]`))
+      .pipe(map((config: Route[]) => config)
+    );
+
+    return this.transferStateService.useScullyTransferState('ctaRoutes', observable);
   }
 
   buildImageUrl(ref: string): string {
