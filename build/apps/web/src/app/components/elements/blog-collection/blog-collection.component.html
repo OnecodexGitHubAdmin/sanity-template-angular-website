@@ -1,5 +1,0 @@
-<ng-container *ngIf="$postsObservable | async as posts">
-  <div fxLayout="row wrap" fxLayoutAlign="start stretch" fxLayoutGap="50px">
-    <templates-blog-card *ngFor="let post of posts" [post]="post"></templates-blog-card>
-  </div>
-</ng-container>

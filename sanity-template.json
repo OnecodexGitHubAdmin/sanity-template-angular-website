@@ -15,14 +15,14 @@
         "type": "studio",
         "title": "Sanity Studio",
         "description": "The Sanity Studio is where you edit and structure your content.",
-        "dir": "template/apps/studio-path",
+        "dir": "apps/studio-path",
         "previewMedia": {
           "type": "image",
-          "src": "template/assets/path-to-image.png",
+          "src": "assets/path-to-image.png",
           "alt": "Sanity Studio"
         },
         "buildSettings": {
-          "base": "template/apps/studio-path",
+          "base": "apps/studio-path",
           "dir": "dist",
           "cmd": "npm run build"
         }
@@ -32,15 +32,15 @@
         "type": "web",
         "title": "Pre-rendered angular client",
         "description": "This is your final website. It is built with angular and rendered using scully.io",
-        "dir": "template/apps/angular-client",
+        "dir": "apps/angular-client",
         "buildSettings": {
           "base": "",
-          "dir": "template/dist/static",
+          "dir": "dist/static",
           "cmd": "npm run build"
         },
         "previewMedia": {
           "type": "image",
-          "src": "template/assets/path-to-image.png",
+          "src": "assets/path-to-image.png",
           "alt": "Pre-rendered angular client"
         }          
       }

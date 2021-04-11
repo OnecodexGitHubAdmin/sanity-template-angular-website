@@ -1,9 +1,0 @@
-<div class="container" fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="15px">
-  <h1>{{data.title}}</h1>
-  <small>{{data._updatedAt | date: 'dd.MM.yyyy'}}</small>
-  <div class="badges">
-    <templates-badge *ngFor="let tag of data.tags" [tag]="tag"></templates-badge>
-  </div>
-  <p>{{data.introduction}}</p>
-  <templates-block *ngFor="let block of data.content" [data]="block"></templates-block>
-</div>
