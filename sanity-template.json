@@ -3,6 +3,7 @@
   "title": "Sanity.io Angular Scully.io Website Template",
   "description": "This template provides an angular client which is pre-rendered using scully.io. You can use it for building any website or even a webshop since sanity.io provides everything for both. The sanity.io studio itself is build with react.",
   "previewMedia": {
+    "src": "assets/path-to-preview-image.png",
     "type": "image",
     "alt": "Sanity.io Angular Scully.io Nx Template"
   },
@@ -15,14 +16,14 @@
         "type": "studio",
         "title": "Sanity Studio",
         "description": "The Sanity Studio is where you edit and structure your content.",
-        "dir": "apps/studio-path",
+        "dir": "template/apps/studio-path",
         "previewMedia": {
           "type": "image",
           "src": "assets/path-to-image.png",
           "alt": "Sanity Studio"
         },
         "buildSettings": {
-          "base": "apps/studio-path",
+          "base": "template/apps/studio-path",
           "dir": "dist",
           "cmd": "npm run build"
         }
@@ -32,7 +33,7 @@
         "type": "web",
         "title": "Pre-rendered angular client",
         "description": "This is your final website. It is built with angular and rendered using scully.io",
-        "dir": "apps/angular-client",
+        "dir": "template/apps/angular-client",
         "buildSettings": {
           "base": "",
           "dir": "dist/static",
