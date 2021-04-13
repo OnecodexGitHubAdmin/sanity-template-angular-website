@@ -8,7 +8,6 @@ import { ComponentTemplateComponent } from './components/component-template/comp
 import { ComponentHostDirective } from './directives/component-host.directive';
 import { ContentComponent } from './components/content/content.component';
 import { AppRoutingModule } from './app-routing.module';
-import { TestComponent } from './components/elements/test/test.component';
 import { TopNavigationComponent } from './components/top-navigation/top-navigation.component';
 import { NotFoundComponent } from './components/elements/not-found/not-found.component';
 import { BannerComponent } from './components/elements/banner/banner.component';
@@ -31,7 +30,6 @@ import { ButtonComponent } from './components/elements/button/button.component';
     ComponentTemplateComponent,
     ComponentHostDirective,
     ContentComponent,
-    TestComponent,
     TopNavigationComponent,
     NotFoundComponent,
     BannerComponent,
