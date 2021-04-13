@@ -22,11 +22,6 @@
       "id": "scully",
       "name": "Scully.io",
       "url": "https://scully.io/"
-    },
-    {
-      "id": "tailwind",
-      "name": "tailwind CSS",
-      "url": "https://tailwindcss.com/"
     }
   ]
 }
