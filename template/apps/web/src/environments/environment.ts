@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   sanity: {
-    projectId: 'vxqbsuag',
-    dataset: 'production',
+    projectId: '<#< sanity.projectId >#>',
+    dataset: '<#< sanity.dataset >#>',
     useCdn: true
   },
 };

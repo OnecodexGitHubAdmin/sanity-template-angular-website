@@ -4,8 +4,8 @@
     "name": "ByMaria CMS "
   },
   "api": {
-    "projectId": "vxqbsuag",
-    "dataset": "production"
+    "projectId": "<#< sanity.projectId >#>",
+    "dataset": "<#< sanity.dataset >#>"
   },
   "plugins": [
     "@sanity/base",

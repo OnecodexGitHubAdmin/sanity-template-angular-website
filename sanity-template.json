@@ -1,13 +1,34 @@
 {
-  "version": 2, 
-  "title": "Sanity.io Angular Scully.io Website Template",
-  "description": "This template provides an angular client which is pre-rendered using scully.io. You can use it for building any website or even a webshop since sanity.io provides everything for both. The sanity.io studio itself is build with react.",
+  "version": 2,
+  "title": "Angular starter template for Netlify or others",
+  "description": "Angular starter template in an nx workspace using tailwindcss and scully.io. Includes deployment on Netlify. This can be changed as well",
   "previewMedia": {
-    "src": "assets/path-to-preview-image.png",
     "type": "image",
-    "alt": "Sanity.io Angular Scully.io Nx Template"
+    "src": "assets/template-logo.png",
+    "alt": "Angular Starter Template"
   },
-  
+  "technologies": [
+    {
+      "id": "angular",
+      "name": "Angular",
+      "url": "https://angular.io/"
+    },
+    {
+      "id": "nx",
+      "name": "NX Dev Tools",
+      "url": "https://nx.dev/"
+    },
+    {
+      "id": "scully",
+      "name": "Scully.io",
+      "url": "https://scully.io/"
+    },
+    {
+      "id": "tailwind",
+      "name": "tailwind CSS",
+      "url": "https://tailwindcss.com/"
+    }
+  ],  
   "deployment": {
     "provider": "netlify",
     "sites": [
@@ -16,16 +37,17 @@
         "type": "studio",
         "title": "Sanity Studio",
         "description": "The Sanity Studio is where you edit and structure your content.",
-        "dir": "template/apps/studio-path",
+        "dir": "./apps/studio",
         "previewMedia": {
           "type": "image",
           "src": "assets/path-to-image.png",
           "alt": "Sanity Studio"
         },
+        "requirements": ["build-hook"],
         "buildSettings": {
-          "base": "template/apps/studio-path",
+          "base": "apps/studio",
           "dir": "dist",
-          "cmd": "npm run build"
+          "cmd": "npm run build && cp netlify.toml dist"
         }
       },
       {
@@ -33,12 +55,13 @@
         "type": "web",
         "title": "Pre-rendered angular client",
         "description": "This is your final website. It is built with angular and rendered using scully.io",
-        "dir": "template/apps/angular-client",
+        "dir": "./apps/web",
         "buildSettings": {
-          "base": "",
-          "dir": "dist/static",
-          "cmd": "npm run build"
+          "base": "/",
+          "dir": "/dist/static",
+          "cmd": "npm run scully"
         },
+        "requirements": ["build-hook"],
         "previewMedia": {
           "type": "image",
           "src": "assets/path-to-image.png",

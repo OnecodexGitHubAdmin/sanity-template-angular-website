@@ -8,8 +8,8 @@ export const config: ScullyConfig = {
   routes: {
     '': {
       type: Routes,
-      projectId: 'vxqbsuag',
-      dataset: 'production',
+      projectId: '<#< sanity.projectId >#>',
+      dataset: '<#< sanity.dataset >#>',
       useCdn: true
     }
   }
