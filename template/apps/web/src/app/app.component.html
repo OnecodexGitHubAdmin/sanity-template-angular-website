@@ -1,7 +1,7 @@
 <ng-container *ngIf="$contentObservable | async as config">
 <div class="container">
   <header fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.lt-lg="start center">
-    <templates-top-navigation [items]="config.mainNavigation"></templates-top-navigation>
+    <template-top-navigation [items]="config.mainNavigation"></template-top-navigation>
     <a class="icon" [href]="config.url || '.'" fxLayout="row" fxLayoutGap="25px" fxLayoutAlign="end center">
       <h1 *ngIf="config.title">{{ config.title }}</h1>
       <img *ngIf="config.logo?.asset?.url"  [class.lt-md]="mobile"

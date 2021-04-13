@@ -3,7 +3,7 @@ import { DynamicComponent } from '../../../models/dynamic-component';
 import { BlockMark } from '../../../models/types/block-mark';
 
 @Component({
-  selector: 'templates-block-child',
+  selector: 'template-block-child',
   templateUrl: './block-child.component.html',
   styleUrls: ['./block-child.component.scss']
 })

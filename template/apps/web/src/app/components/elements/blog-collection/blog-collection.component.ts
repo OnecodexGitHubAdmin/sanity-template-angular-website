@@ -7,7 +7,7 @@ import { Reference } from '../../../models/types/reference';
 import { SanityService } from '../../../services/sanity.service';
 
 @Component({
-  selector: 'templates-blog-collection',
+  selector: 'template-blog-collection',
   templateUrl: './blog-collection.component.html',
   styleUrls: ['./blog-collection.component.scss']
 })

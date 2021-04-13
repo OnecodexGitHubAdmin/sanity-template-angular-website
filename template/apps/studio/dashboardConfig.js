@@ -3,10 +3,10 @@ export default {
     {
       name: 'sanity-tutorials',
       options: {
-        templateRepoId: 'OneCodexGitHubAdmin/sanity-template-angular-website'
+        templateRepoId: '<#<repository.owner>#>/<#<repository.name>#>'
       }
     },
-    {name: 'structure-menu'},
+    { name: 'structure-menu' },
     {
       name: 'project-info',
       options: {
@@ -18,16 +18,16 @@ export default {
                 'NOTE: Because these sites are static builds, they need to be re-deployed to see the changes when documents are published.',
               sites: [
                 {
-                  buildHookId: '5f889239cf90b11013b552c5',
+                  buildHookId: '<#<deployments.studio.providerInfo.buildHookId>#>',
                   title: 'Sanity Studio',
-                  name: 'sanity-template-angular-website-studio',
-                  apiId: '77125b28-46f0-49e8-a955-8db8b6885d9c'
+                  name: '<#<deployments.studio.providerInfo.siteName>#>',
+                  apiId: '<#<deployments.studio.providerInfo.siteId>#>'
                 },
                 {
-                  buildHookId: '5f8892390a7a000fe527100b',
+                  buildHookId: '<#<deployments.web.providerInfo.buildHookId>#>',
                   title: 'Landing pages Website',
-                  name: 'sanity-template-angular-website',
-                  apiId: '11627919-f573-4f36-8df1-80f2222d646a'
+                  name: '<#<deployments.web.providerInfo.siteName>#>',
+                  apiId: '<#<deployments.web.providerInfo.siteId>#>'
                 }
               ]
             }
@@ -36,10 +36,10 @@ export default {
         data: [
           {
             title: 'GitHub repo',
-            value: 'https://github.com/OnecodexGitHubAdmin/sanity-template-angular-website',
+            value: 'https://github.com/<#<repository.owner>#>/<#<repository.name>#>',
             category: 'Code'
           },
-          {title: 'Frontend', value: 'https://bymaria-sanity-nextjs-landing-pages.netlify.app', category: 'apps'}
+          {title: 'Frontend', value: '<#<deployments.web.url>#>', category: 'apps'}
         ]
       }
     },

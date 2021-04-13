@@ -8,7 +8,7 @@ import { Route } from '../../../models/types/route';
 import { SanityService } from '../../../services/sanity.service';
 
 @Component({
-  selector: 'templates-banner',
+  selector: 'template-banner',
   templateUrl: './banner.component.html',
   styleUrls: ['./banner.component.scss']
 })

@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Tag } from '../../../models/types/tag';
 
 @Component({
-  selector: 'templates-badge',
+  selector: 'template-badge',
   templateUrl: './badge.component.html',
   styleUrls: ['./badge.component.scss']
 })

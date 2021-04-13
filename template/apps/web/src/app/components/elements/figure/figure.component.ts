@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { DynamicComponent } from '../../../models/dynamic-component';
+import { Figure } from '../../../models/types/figure';
+import { SanityService } from '../../../services/sanity.service';
 
 @Component({
-  selector: 'templates-figure',
+  selector: 'template-figure',
   templateUrl: './figure.component.html',
   styleUrls: ['./figure.component.scss']
 })
-export class FigureComponent implements OnInit {
+export class FigureComponent implements DynamicComponent {
+  url: string;
 
-  constructor() { }
+  @Input() set data(figureReference: Figure) {
+    this.url = this.service.buildImageUrl(figureReference.asset._ref)
+  };
 
-  ngOnInit(): void {
+  constructor(private service: SanityService) { 
   }
-
 }

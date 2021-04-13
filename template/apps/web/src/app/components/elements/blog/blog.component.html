@@ -2,8 +2,12 @@
   <h1>{{data.title}}</h1>
   <small>{{data._updatedAt | date: 'dd.MM.yyyy'}}</small>
   <div class="badges">
-    <templates-badge *ngFor="let tag of data.tags" [tag]="tag"></templates-badge>
+    <template-badge *ngFor="let tag of data.tags" [tag]="tag"></template-badge>
   </div>
   <p>{{data.introduction}}</p>
-  <templates-block *ngFor="let block of data.content" [data]="block"></templates-block>
+  <ng-container  *ngFor="let item of data.content">
+    <template-block *ngIf="item._type === 'block' || item._type === 'code'" [data]="item"></template-block>
+    <template-figure *ngIf="item._type === 'figure'" [data]="item"></template-figure>
+    <template-embed-html *ngIf="item._type === 'embedHTML'" [data]="item"></template-embed-html>
+  </ng-container>
 </div>

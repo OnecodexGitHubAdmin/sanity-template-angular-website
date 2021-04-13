@@ -1,10 +1,10 @@
-import { Component, ComponentFactoryResolver, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ComponentFactoryResolver, Input, ViewChild } from '@angular/core';
 import { ComponentHostDirective } from '../../directives/component-host.directive';
 import { DynamicComponent } from '../../models/dynamic-component';
 import { ComponentItem } from '../../models/component-item';
 
 @Component({
-  selector: 'templates-component-template',
+  selector: 'template-component-template',
   templateUrl: './component-template.component.html',
   styleUrls: ['./component-template.component.scss']
 })

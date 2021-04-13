@@ -1,7 +1,7 @@
 {
   "root": true,
   "project": {
-    "name": "ByMaria CMS "
+    "name": "<#< sanity.projectTitle >#>"
   },
   "api": {
     "projectId": "<#< sanity.projectId >#>",

@@ -6,7 +6,7 @@ import { SiteConfig } from './models/types/site-config';
 import { SanityService } from './services/sanity.service';
 
 @Component({
-  selector: 'templates-root',
+  selector: 'template-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

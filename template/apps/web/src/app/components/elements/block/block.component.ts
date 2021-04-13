@@ -3,7 +3,7 @@ import { DynamicComponent } from '../../../models/dynamic-component';
 import { Block } from '../../../models/types/block';
 
 @Component({
-  selector: 'templates-block',
+  selector: 'template-block',
   templateUrl: './block.component.html',
   styleUrls: ['./block.component.scss']
 })

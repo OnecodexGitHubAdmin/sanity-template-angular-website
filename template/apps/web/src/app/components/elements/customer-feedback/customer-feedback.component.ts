@@ -8,7 +8,7 @@ import { Reference } from '../../../models/types/reference';
 import { SanityService } from '../../../services/sanity.service';
 
 @Component({
-  selector: 'templates-customer-feedback',
+  selector: 'template-customer-feedback',
   templateUrl: './customer-feedback.component.html',
   styleUrls: ['./customer-feedback.component.scss']
 })

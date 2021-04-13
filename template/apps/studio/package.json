@@ -6,7 +6,7 @@
   "author": "Sanity <hello@bymaria.ch>",
   "scripts": {
     "build": "sanity build",
-    "dev": "sanity start",
+    "dev": "sanity start --template-values template-values-development.json",
     "test": "sanity check"
   },
   "dependencies": {

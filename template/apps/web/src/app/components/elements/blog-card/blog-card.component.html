@@ -2,7 +2,7 @@
   <h1>{{post.title}}</h1>
   <p>{{post.introduction}}</p>
   <div>
-    <templates-badge *ngFor="let tag of post.tags" [tag]="tag"></templates-badge>
+    <template-badge *ngFor="let tag of post.tags" [tag]="tag"></template-badge>
   </div>
-  <templates-button *ngIf="post.route?.current" [route]="post.route.current" [title]="'Read more'"></templates-button>
+  <template-button *ngIf="post.route?.current" [route]="post.route.current" [title]="'Read more'"></template-button>
 </div>

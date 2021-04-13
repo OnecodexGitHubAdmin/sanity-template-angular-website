@@ -3,7 +3,7 @@ import { DynamicComponent } from '../../../models/dynamic-component';
 import { SanityType } from '../../../models/types/sanity-type';
 
 @Component({
-  selector: 'templates-not-found',
+  selector: 'template-not-found',
   templateUrl: './not-found.component.html',
   styleUrls: ['./not-found.component.scss']
 })

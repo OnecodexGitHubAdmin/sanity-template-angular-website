@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { BlogPost } from '../../../models/types/blog-post';
 
 @Component({
-  selector: 'templates-blog-card',
+  selector: 'template-blog-card',
   templateUrl: './blog-card.component.html',
   styleUrls: ['./blog-card.component.scss']
 })

@@ -3,7 +3,7 @@ import { DynamicComponent } from '../../../models/dynamic-component';
 import { BlogPost } from '../../../models/types/blog-post';
 
 @Component({
-  selector: 'templates-blog',
+  selector: 'template-blog',
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.scss']
 })

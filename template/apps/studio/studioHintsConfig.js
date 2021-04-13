@@ -1,3 +1,3 @@
 export default {
-  templateRepoId: 'OnecodexGitHubAdmin/sanity-template-angular-website'
+  templateRepoId: '<#<repository.owner>#>/<#<repository.name>#>'
 }

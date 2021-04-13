@@ -12,7 +12,7 @@ import { BlogComponent } from '../elements/blog/blog.component';
 import { NotFoundComponent } from '../elements/not-found/not-found.component';
 
 @Component({
-  selector: 'templates-content',
+  selector: 'template-content',
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.scss']
 })
