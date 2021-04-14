@@ -11,7 +11,9 @@
     </a>
   </header>
   <main>
-    <router-outlet></router-outlet>
+    <div>
+      <router-outlet></router-outlet>
+    </div>
     <footer>
       <div class="social-media" *ngIf="config.socialMediaLinks" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="25px">
         <a *ngFor="let item of config.socialMediaLinks" [href]="item.href || '#'">

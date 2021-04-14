@@ -42,9 +42,15 @@ header {
 
 main {
   margin-top: 50px;
-  height: calc(100vh - 54px);
+  min-height: calc(100vh - 54px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   footer {
+    display: flex;
+    justify-content: center;
     padding: 50px 0;
     border-top: 4px solid var(--primary);
     text-align: center;
