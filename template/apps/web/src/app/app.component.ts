@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
+import { Title } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 import { SiteConfig } from './models/types/site-config';
 import { SanityService } from './services/sanity.service';
 
@@ -11,17 +11,15 @@ import { SanityService } from './services/sanity.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  canonical: HTMLLinkElement = document.querySelector('#canonical');
   $contentObservable: Observable<SiteConfig>;
   image: string;
   currentDate = new Date();
 
-  constructor(service: SanityService, metaService: Meta, titleService: Title) {    
-    this.$contentObservable = service.fetchSiteConfig().pipe(map((config: SiteConfig) => {
-      metaService.addTags([{ name: 'og:site_name', content: config.title }]);   
-      titleService.setTitle(config.title);
-      this.canonical.href = config.url;
-      return config;
-    }));
+  constructor(service: SanityService, titleService: Title) {    
+    this.$contentObservable = service.fetchSiteConfig().pipe(
+      tap((config: SiteConfig) => {
+        titleService.setTitle(config.title);
+      })
+    );
   }
 }

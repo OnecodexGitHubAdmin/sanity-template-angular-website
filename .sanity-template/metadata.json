@@ -30,7 +30,7 @@
         "buildSettings": {
           "base": "/",
           "dir": "/dist/static",
-          "cmd": "npm run scully"
+          "cmd": "npm run build && npm run scully"
         },
         "requirements": ["build-hook"],
         "previewMedia": {
