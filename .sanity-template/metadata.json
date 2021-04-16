@@ -1,5 +1,4 @@
-{
-  ,  
+{ 
   "deployment": {
     "provider": "netlify",
     "sites": [

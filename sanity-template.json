@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "title": "Angular starter template for Netlify or others",
-  "description": "Angular starter template in an nx workspace using tailwindcss and scully.io. Includes deployment on Netlify. This can be changed as well",
+  "title": "Angular starter template",
+  "description": "Angular starter template in an nx workspace using scully.io. Includes deployment on Netlify",
   "previewMedia": {
     "type": "image",
     "src": "assets/template-logo.png",
@@ -23,5 +23,46 @@
       "name": "Scully.io",
       "url": "https://scully.io/"
     }
-  ]
+  ],
+  "deployment": {
+    "provider": "netlify",
+    "sites": [
+      {
+        "id": "studio",
+        "type": "studio",
+        "title": "Sanity Studio",
+        "description": "The Sanity Studio is where you edit and structure your content.",
+        "dir": "./apps/studio",
+        "previewMedia": {
+          "type": "image",
+          "src": "assets/studio.png",
+          "alt": "Sanity Studio"
+        },
+        "requirements": ["build-hook"],
+        "buildSettings": {
+          "base": "apps/studio",
+          "dir": "dist",
+          "cmd": "npm run build && cp netlify.toml dist"
+        }
+      },
+      {
+        "id": "site",
+        "type": "web",
+        "title": "Pre-rendered angular client",
+        "description": "This is your final website. It is built with angular and rendered using scully.io",
+        "dir": "./apps/web",
+        "buildSettings": {
+          "base": "/",
+          "dir": "/dist/static",
+          "cmd": "npm run build && npm run scully"
+        },
+        "requirements": ["build-hook"],
+        "previewMedia": {
+          "type": "image",
+          "src": "assets/website.png",
+          "alt": "Pre-rendered angular client"
+        }          
+      }
+    ]
+  }
 }
