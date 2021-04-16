@@ -25,7 +25,7 @@ export default {
                 },
                 {
                   buildHookId: '<#<deployments.web.providerInfo.buildHookId>#>',
-                  title: 'Landing pages Website',
+                  title: 'Website',
                   name: '<#<deployments.web.providerInfo.siteName>#>',
                   apiId: '<#<deployments.web.providerInfo.siteId>#>'
                 }
