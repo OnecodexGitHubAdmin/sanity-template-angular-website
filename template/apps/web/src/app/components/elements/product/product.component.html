@@ -1,0 +1,63 @@
+<div
+  class="container"
+  fxLayout="column"
+  fxLayoutAlign="start center"
+  fxLayoutGap="15px"
+  fxShow="true"
+  fxShow.gt-sm="false"
+>
+  <h3>{{ product.title }}</h3>
+  <div fxLayout="row" fxLayoutAlign="center start">
+    <img [src]="product.image?.asset?.url"/>
+  </div>
+  <ng-container *ngFor="let item of product.productDescription">
+    <template-block
+      *ngIf="item._type === 'block' || item._type === 'code'"
+      [data]="item"
+    ></template-block>
+    <template-figure
+      *ngIf="item._type === 'figure'"
+      [data]="item"
+    ></template-figure>
+    <template-embed-html
+      *ngIf="item._type === 'embedHTML'"
+      [data]="item"
+    ></template-embed-html>
+  </ng-container>
+  <div>
+    <a class="button" (click)="addToCart(product)">{{'Add To Cart' | uppercase}}</a>
+  </div>
+</div>
+
+<div
+  class="container"
+  fxLayout="row"
+  fxLayoutAlign="center start"
+  fxLayoutGap="100px"
+  fxShow="false"
+  fxShow.gt-sm="true"
+>
+  <div fxLayout="row" fxLayoutAlign="center start">
+    <img [src]="product.image?.asset?.url"/>
+  </div>
+  <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="15px">
+    <h3>{{ product.title }}</h3>
+    <ng-container *ngFor="let item of product.productDescription">
+      <template-block
+        *ngIf="item._type === 'block' || item._type === 'code'"
+        [data]="item"
+      ></template-block>
+      <template-figure
+        *ngIf="item._type === 'figure'"
+        [data]="item"
+      ></template-figure>
+      <template-embed-html
+        *ngIf="item._type === 'embedHTML'"
+        [data]="item"
+      ></template-embed-html>
+    </ng-container>
+    <div>
+      <button (click)="addToCart(product)">{{'Add To Cart' | uppercase}}</button>
+    </div>
+  </div>
+</div>

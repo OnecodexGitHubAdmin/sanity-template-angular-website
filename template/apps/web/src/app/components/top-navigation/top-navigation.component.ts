@@ -1,4 +1,9 @@
 import { Component, Input } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { ShoppingCartStore } from '../../models/store/shopping-cart-store';
+import { Product } from '../../models/types/product';
 import { Route } from '../../models/types/route';
 
 @Component({
@@ -8,6 +13,12 @@ import { Route } from '../../models/types/route';
 })
 export class TopNavigationComponent {
   @Input() items: Route[];
+  @Input() addShoppingCardIcon: boolean;
 
   showMenu: boolean;
+  shoppingCartObservable$: Observable<Product[]>;
+
+  constructor(private store: Store<ShoppingCartStore>) {
+    this.shoppingCartObservable$ = this.store.select((shoppingCartStore: ShoppingCartStore) => shoppingCartStore.shoppingCart);
+  }
 }

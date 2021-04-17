@@ -1,20 +1,20 @@
 <ng-container *ngIf="$contentObservable | async as config">
 <div class="container">
-  <header fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.lt-lg="start center">
-    <template-top-navigation [items]="config.mainNavigation"></template-top-navigation>
-    <a class="icon" [href]="config.url || '.'" fxLayout="row" fxLayoutGap="25px" fxLayoutAlign="end center">
-      <h1 *ngIf="config.title">{{ config.title }}</h1>
+  <header fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.lt-lg="end center">
+    <a class="icon" [href]="config.url || '.'" fxLayout="row" fxLayoutGap="25px" fxLayoutAlign="start center">
       <img *ngIf="config.logo?.asset?.url"  [class.lt-md]="mobile"
         [alt]="config.logo.alt"
         [src]="config.logo?.asset?.url"    
       />
+      <h1 *ngIf="config.title">{{ config.title }}</h1>
     </a>
+    <template-top-navigation [items]="config.mainNavigation" [addShoppingCardIcon]="config.addShoppingCardIcon"></template-top-navigation>
   </header>
   <main>
     <div>
       <router-outlet></router-outlet>
     </div>
-    <footer>
+    <footer fxLayout="column" fxLayoutAlign="start center">
       <div class="social-media" *ngIf="config.socialMediaLinks" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="25px">
         <a *ngFor="let item of config.socialMediaLinks" [href]="item.href || '#'">
           <img *ngIf="item.image?.asset" [src]="item.image.asset.url" [alt]="item.image.alt"/>

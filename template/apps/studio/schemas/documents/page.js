@@ -26,6 +26,7 @@ export default {
         { type: 'figure' },
         { type: 'portableText' },
         { type: 'blogCollection' },
+        { type: 'productCollection' },
       ],
     },
     {
@@ -49,11 +50,11 @@ export default {
       title: 'title',
       media: 'openGraphImage',
     },
-    prepare: ({title, media}) => {
+    prepare: ({ title, media }) => {
       return {
         title,
-        media
-      };
-    }
+        media,
+      }
+    },
   },
-};
+}

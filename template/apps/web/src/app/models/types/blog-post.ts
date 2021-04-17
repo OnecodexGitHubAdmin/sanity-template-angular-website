@@ -7,7 +7,7 @@ import { Tag } from './tag';
 
 export interface BlogPost extends Page {
   _updatedAt: Date;
-  content: (Block|Figure|EmbedHtml)[];
+  content: (Block | Figure | EmbedHtml)[];
   introduction: string;
   tags: Tag[];
   route: Slug;

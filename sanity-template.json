@@ -22,6 +22,11 @@
       "id": "scully",
       "name": "Scully.io",
       "url": "https://scully.io/"
+    },
+    {
+      "id": "ngrx",
+      "name": "NgRx",
+      "url": "https://ngrx.io/"
     }
   ],
   "deployment": {

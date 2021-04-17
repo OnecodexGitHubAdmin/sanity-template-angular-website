@@ -1,0 +1,9 @@
+<div fxLayout="column" fxLayoutAlign="space-between center">
+  <img [src]="product.image?.asset?.url" />
+  <h1>{{ product.title }}</h1>
+  <template-button
+    *ngIf="product.route?.current"
+    [route]="product.route.current"
+    [title]="'Show product'"
+  ></template-button>
+</div>

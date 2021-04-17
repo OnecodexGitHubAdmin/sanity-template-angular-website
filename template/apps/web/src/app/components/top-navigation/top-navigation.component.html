@@ -1,21 +1,33 @@
-<div fxHide.lt-md="true" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px">
-  <a *ngFor="let item of items" [routerLink]="[item.slug.current]">{{ item.title | uppercase }}</a>
-</div>
 
-<div fxHide.gt-sm="true" id="menu-toggle" [class.open]="showMenu" (click)="showMenu = !showMenu">
-  <div id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
+<ng-container *ngrxLet="shoppingCartObservable$ as shoppingCart">
+  <div fxHide.lt-md="true" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px">
+    <a *ngFor="let item of items" [routerLink]="[item.slug.current]">{{ item.title | uppercase }}</a>
   </div>
-  <div id="cross">
-    <span></span>
-    <span></span>
+    <div fxHide.lt-md="true" class="cart" id="cart" *ngIf="addShoppingCardIcon">
+      <img src="assets/Shopping-Cart.svg"/>
+      <span class="badge" *ngIf="shoppingCart?.length">{{shoppingCart.length}}</span>
+    </div>
+  <div fxHide.gt-sm="true" fxLayout="row" fxLayoutGap="15px">
+      <div class="cart" *ngIf="addShoppingCardIcon">
+        <img src="assets/Shopping-Cart.svg"/>
+        <span class="badge" *ngIf="shoppingCart?.length">{{shoppingCart.length}}</span>
+      </div>
+    <div id="menu-toggle" [class.open]="showMenu" (click)="showMenu = !showMenu">
+      <div id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div id="cross">
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div *ngIf="showMenu" class="mobile-menu" fxLayout="column" fxLayoutAlign="start stretch">
+      <div *ngFor="let item of items; let i = index">
+        <a [routerLink]="[item.slug.current]" (click)="showMenu = false">{{ item.title | uppercase }}</a>
+        <hr *ngIf="i < items.length - 1"/>
+      </div>
+    </div>
   </div>
-</div>
-<div fxHide.gt-sm="true"  *ngIf="showMenu" class="mobile-menu" fxLayout="column" fxLayoutAlign="start stretch">
-  <div *ngFor="let item of items; let i = index">
-    <a [routerLink]="[item.slug.current]" (click)="showMenu = false">{{ item.title | uppercase }}</a>
-    <hr *ngIf="i < items.length - 1"/>
-  </div>
-</div>
+</ng-container>

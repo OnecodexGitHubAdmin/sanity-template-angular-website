@@ -1,5 +1,3 @@
-import blog from '../documents/blog';
-
 export default {
   name: 'blogCollection',
   type: 'object',
@@ -18,17 +16,17 @@ export default {
             {
               type: 'blog',
             },
-          ]
-        }
+          ],
+        },
       ],
-    }
+    },
   ],
 
   preview: {
     prepare: () => {
       return {
-        title: 'Blog Collection'
-      };
-    }
+        title: 'Blog Collection',
+      }
+    },
   },
-};
+}

@@ -22,7 +22,12 @@ import { BadgeComponent } from './components/elements/badge/badge.component';
 import { BlockChildComponent } from './components/elements/block-child/block-child.component';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 import { ButtonComponent } from './components/elements/button/button.component';
-
+import { ProductCollectionComponent } from './components/elements/product-collection/product-collection.component';
+import { ProductComponent } from './components/elements/product/product.component';
+import { ProductCardComponent } from './components/elements/product-card/product-card.component';
+import { shoppingCartReducer } from './store/reducers/shopping-cart.reducer';
+import { StoreModule } from '@ngrx/store';
+import { ReactiveComponentModule } from '@ngrx/component';
 
 @NgModule({
   declarations: [
@@ -43,9 +48,19 @@ import { ButtonComponent } from './components/elements/button/button.component';
     BadgeComponent,
     BlockChildComponent,
     SafeHtmlPipe,
-    ButtonComponent
+    ButtonComponent,
+    ProductCollectionComponent,
+    ProductComponent,
+    ProductCardComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ScullyLibModule, FlexLayoutModule ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ScullyLibModule,
+    FlexLayoutModule,
+    ReactiveComponentModule,
+    StoreModule.forRoot({ shoppingCart: shoppingCartReducer }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
