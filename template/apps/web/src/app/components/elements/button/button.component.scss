@@ -4,10 +4,10 @@ div {
 
   .button {
     padding: 5px;
-    border: 2px solid white;
+    border: 2px solid var(--accent);
     text-align: center;
     vertical-align: middle;
     text-decoration: none;
-    color: white;
+    color: var(--accent);
   }
 }

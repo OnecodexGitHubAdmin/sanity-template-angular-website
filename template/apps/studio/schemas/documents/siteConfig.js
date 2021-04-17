@@ -1,4 +1,4 @@
-import bcp47 from 'bcp47';
+import bcp47 from 'bcp47'
 
 export default {
   name: 'site-config',
@@ -6,7 +6,10 @@ export default {
   title: 'Site configuration',
   // https://www.sanity.io/docs/experimental/ui-affordances-for-actions
   __experimental_actions: [/* create, delete, */ 'update', 'publish'],
-  fieldsets: [{ name: 'footer', title: 'Footer' }, { name: 'copyright', title: 'Copyright' }],
+  fieldsets: [
+    { name: 'footer', title: 'Footer' },
+    { name: 'copyright', title: 'Copyright' },
+  ],
   fields: [
     {
       name: 'title',
@@ -21,8 +24,7 @@ export default {
     },
     {
       title: 'Brand logo',
-      description:
-        'Best choice is to use an SVG where the color are set with currentColor',
+      description: 'Best choice is to use an SVG where the color are set with currentColor',
       name: 'logo',
       type: 'image',
       fields: [
@@ -41,7 +43,7 @@ export default {
       title: 'Main navigation',
       name: 'mainNavigation',
       description: 'Select pages for the top menu',
-      validation: Rule => [
+      validation: (Rule) => [
         Rule.max(5).warning('Are you sure you want more than 5 items?'),
         Rule.unique().error('You have duplicate menu items'),
       ],
@@ -54,10 +56,15 @@ export default {
       ],
     },
     {
+      title: 'Enable Shopping Card Icon',
+      name: 'addShoppingCardIcon',
+      type: 'boolean'
+    },
+    {
       title: 'Footer navigation items',
       name: 'footerNavigation',
       type: 'array',
-      validation: Rule => [
+      validation: (Rule) => [
         Rule.max(10).warning('Are you sure you want more than 10 items?'),
         Rule.unique().error('You have duplicate menu items'),
       ],
@@ -76,7 +83,7 @@ export default {
       fieldset: 'footer',
       of: [
         {
-          type: 'tag'
+          type: 'tag',
         },
       ],
     },
@@ -97,5 +104,15 @@ export default {
       type: 'string',
       fieldset: 'copyright',
     },
+    {
+      name: 'primaryColor',
+      Title: 'Primary Color',
+      type: 'colorPicker',
+    },
+    {
+      name: 'accentColor',
+      Title: 'Accent Color',
+      type: 'colorPicker',
+    },
   ],
-};
+}

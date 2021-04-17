@@ -30,7 +30,7 @@ img {
   margin: 50px;
   padding: 50px;
   background-color: var(--primary);
-  color: white;
+  color: var(--accent);
   text-align: center;
   position: absolute;
 
@@ -39,7 +39,7 @@ img {
     line-height: 32px;
     font-weight: 600;
   }
-  
+
   h3 {
     font-size: 14px;
     line-height: 14px;

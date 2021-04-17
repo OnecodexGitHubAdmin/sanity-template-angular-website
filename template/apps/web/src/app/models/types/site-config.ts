@@ -15,4 +15,7 @@ export interface SiteConfig {
   socialMediaLinks: Tag[];
   copyrightDate: Date;
   copyrightText: string;
+  primaryColor: string;
+  accentColor: string;
+  addShoppingCardIcon: boolean;
 }

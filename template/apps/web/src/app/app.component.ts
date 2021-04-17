@@ -15,10 +15,18 @@ export class AppComponent {
   image: string;
   currentDate = new Date();
 
-  constructor(service: SanityService, titleService: Title) {    
+  constructor(service: SanityService, titleService: Title) {
     this.$contentObservable = service.fetchSiteConfig().pipe(
       tap((config: SiteConfig) => {
         titleService.setTitle(config.title);
+        document.documentElement.style.setProperty(
+          '--primary',
+          config.primaryColor
+        );
+        document.documentElement.style.setProperty(
+          '--accent',
+          config.accentColor
+        );
       })
     );
   }
