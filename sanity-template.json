@@ -4,7 +4,7 @@
   "description": "Angular starter template in an nx workspace using scully.io. Includes deployment on Netlify",
   "previewMedia": {
     "type": "image",
-    "src": ".sanity-template/assets/template-logo.png",
+    "src": ".assets/template-logo.png",
     "alt": "Angular Starter Template"
   },
   "technologies": [
