@@ -8,7 +8,7 @@ The template contains both a Sanity Studio and a front-end in Angular. Both are 
 
 The Angular front-end is using scully to generate static pages before being deployed. 
 
-![The Sanity.io and Angular powered website](https://github.com/OnecodexGitHubAdmin/sanity-template-angular-website/blob/master/.sanity-template/assets/website.png?raw=true)
+![The Sanity.io and Angular powered website](https://github.com/OnecodexGitHubAdmin/sanity-template-angular-website/blob/master/assets/website.png?raw=true)
 
 ## Local development
 
