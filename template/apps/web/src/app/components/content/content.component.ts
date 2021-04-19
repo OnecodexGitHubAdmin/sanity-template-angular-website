@@ -22,7 +22,6 @@ import { ProductComponent } from '../elements/product/product.component';
 })
 export class ContentComponent implements OnInit {
   canonical: HTMLLinkElement = document.querySelector('#canonical');
-
   $componentsObservable: Observable<ComponentItem[]>;
 
   constructor(

@@ -15,7 +15,9 @@ import product from './documents/product'
 // Object types
 import banner from './objects/banner'
 import blogCollection from './objects/blogCollection'
+import card from './objects/card'
 import code from './objects/code'
+import contactCard from './objects/contactCard'
 import cta from './objects/cta'
 import customerFeedback from './objects/customerFeedback'
 import divider from './objects/divider'
@@ -37,7 +39,9 @@ export default createSchema({
     banner,
     blog,
     blogCollection,
+    card,
     code,
+    contactCard,
     cta,
     customerFeedback,
     divider,

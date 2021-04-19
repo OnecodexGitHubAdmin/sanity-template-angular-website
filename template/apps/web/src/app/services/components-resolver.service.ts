@@ -10,6 +10,10 @@ import { FeedbackReference } from '../models/types/feedback-reference';
 import { BlogCollection } from '../models/types/product-collection';
 import { ProductCollection } from '../models/types/blog-collection';
 import { ProductCollectionComponent } from '../components/elements/product-collection/product-collection.component';
+import { ContactCardComponent } from '../components/elements/contact-card/contact-card.component';
+import { ContactCard } from '../models/types/contact-card';
+import { CardComponent } from '../components/elements/card/card.component';
+import { Card } from '../models/types/card';
 
 @Injectable({
   providedIn: 'root',
@@ -33,6 +37,16 @@ export class ComponentsResolverService {
         return new ComponentItem(
           ProductCollectionComponent,
           item as ProductCollection
+        );
+      case 'contactCard':
+        return new ComponentItem(
+          ContactCardComponent,
+          item as ContactCard
+        );
+      case 'card':
+        return new ComponentItem(
+          CardComponent,
+          item as Card
         );
       default:
         return new ComponentItem(NotFoundComponent, null);

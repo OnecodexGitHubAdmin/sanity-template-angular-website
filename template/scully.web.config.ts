@@ -3,6 +3,14 @@ import { Routes } from './scully/plugins/routesPlugin';
 
 import { getSitemapPlugin } from '@gammastream/scully-plugin-sitemap';
 
+const routesConfig = {
+  type: Routes,
+      projectId: '<#< sanity.projectId >#>',
+      dataset: '<#< sanity.dataset >#>',
+      apiVersion: '2021-03-25',
+      useCdn: true
+}
+
 const SitemapPlugin = getSitemapPlugin();
 setPluginConfig(SitemapPlugin, {
     urlPrefix: '<#< deployments.web.url >#>',
@@ -13,12 +21,7 @@ setPluginConfig(SitemapPlugin, {
     priority: ['1.0', '0.9', '0.8', '0.7', '0.6', '0.5', '0.4', '0.3', '0.2', '0.1', '0.0'],
     ignoredRoutes: ['/404'],
     routes: {
-      '': {
-        type: Routes,
-        projectId: '<#< sanity.projectId >#>',
-        dataset: '<#< sanity.dataset >#>',
-        useCdn: true
-      }
+      '': routesConfig
     }
 });
 
@@ -27,11 +30,6 @@ export const config: ScullyConfig = {
   projectName: "web",
   outDir: './dist/static',
   routes: {
-    '': {
-      type: Routes,
-      projectId: '<#< sanity.projectId >#>',
-      dataset: '<#< sanity.dataset >#>',
-      useCdn: true
-    }
+    '': routesConfig
   }
 };

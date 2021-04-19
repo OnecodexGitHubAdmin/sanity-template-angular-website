@@ -9,6 +9,7 @@ const routesPlugin = async (route, config) => {
   const client = sanityClient({
     projectId: config.projectId,
     dataset: config.dataset,
+    apiVersion: config.apiVersion,
     useCdn: false
   });
 

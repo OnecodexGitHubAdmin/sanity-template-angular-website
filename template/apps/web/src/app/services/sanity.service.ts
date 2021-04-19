@@ -10,6 +10,7 @@ import { Page } from '../models/types/page';
 import { CustomerFeedback } from '../models/types/customer-feedback';
 import { BlogPost } from '../models/types/blog-post';
 import { Product } from '../models/types/product';
+import { LoadedImage } from '../models/types/loaded-image';
 
 @Injectable({
   providedIn: 'root',
@@ -33,6 +34,23 @@ export class SanityService {
     );
 
     return this.transferStateService.useScullyTransferState('data', observable);
+  }
+  
+  fetchPageBackgroundImage(name: string): Observable<string> {
+    const client = this.createClient();
+    name = `${name}`;
+    // eslint-disable-next-line max-len
+    const observable = from(
+      client.fetch(
+        `*[_type == "route" && slug.current == "${name}"][0] { page -> { backgroundImage {asset-> } } }`
+      )
+    ).pipe(
+      map((result: { page: Page }) => {
+        return result?.page?.backgroundImage?.asset?.url;
+      })
+    );
+
+    return this.transferStateService.useScullyTransferState('backgroundImage', observable);
   }
 
   fetchSiteConfig(): Observable<SiteConfig> {
@@ -142,6 +160,7 @@ export class SanityService {
     const client = sanityClient({
       projectId: environment.sanity.projectId,
       dataset: environment.sanity.dataset,
+      apiVersion: environment.sanity.apiVersion,
       useCdn: false,
     });
 

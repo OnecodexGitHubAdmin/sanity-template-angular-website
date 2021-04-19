@@ -13,6 +13,12 @@ export default {
       name: 'title',
       type: 'string',
       title: 'Title',
+    },    
+    {
+      name: 'backgroundImage',
+      type: 'figure',
+      title: 'Background Image',
+      description: 'The background image you want to use for this page',
     },
     {
       name: 'content',
@@ -20,6 +26,8 @@ export default {
       title: 'Page sections',
       of: [
         { type: 'banner' },
+        { type: 'card' },
+        { type: 'contactCard' },
         { type: 'cta' },
         { type: 'customerFeedback' },
         { type: 'divider' },

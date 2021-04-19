@@ -51,7 +51,7 @@
         }
       },
       {
-        "id": "site",
+        "id": "web",
         "type": "web",
         "title": "Pre-rendered angular client",
         "description": "This is your final website. It is built with angular and rendered using scully.io",

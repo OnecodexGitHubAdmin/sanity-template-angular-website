@@ -28,6 +28,8 @@ import { ProductCardComponent } from './components/elements/product-card/product
 import { shoppingCartReducer } from './store/reducers/shopping-cart.reducer';
 import { StoreModule } from '@ngrx/store';
 import { ReactiveComponentModule } from '@ngrx/component';
+import { ContactCardComponent } from './components/elements/contact-card/contact-card.component';
+import { CardComponent } from './components/elements/card/card.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { ReactiveComponentModule } from '@ngrx/component';
     ProductCollectionComponent,
     ProductComponent,
     ProductCardComponent,
+    ContactCardComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,

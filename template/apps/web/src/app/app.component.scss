@@ -48,6 +48,11 @@ main {
   flex-direction: column;
   justify-content: space-between;
 
+  .bgContainer {
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
   footer {
     display: flex;
     justify-content: center;

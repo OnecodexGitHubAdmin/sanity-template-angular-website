@@ -34,6 +34,7 @@ export default {
           type: 'route',
         },
       ],
+      fieldset: 'link',
     },
   ],
   preview: {

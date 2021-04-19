@@ -19,14 +19,6 @@ export default {
           scheme: ['https', 'http', 'mailto', 'tel'],
         }),
     },
-    {
-      name: 'image',
-      type: 'figure',
-      title: 'Image',
-      options: {
-        hotspot: true,
-      },
-    },
   ],
   preview: {
     select: {

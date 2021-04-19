@@ -10,3 +10,18 @@ body {
   --primary: #064206;
   --accent: #ffffff;
 }
+
+.card {
+  padding: 50px;
+  margin: 50px 0;
+  background-color: var(--primary);
+  color: var(--accent);
+
+  h2 {
+    font-weight: 500;
+    font-size: 23px;
+    line-height: normal;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+}
