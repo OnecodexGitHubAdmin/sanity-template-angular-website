@@ -1,23 +1,21 @@
-const {registerPlugin} = require('@scullyio/scully');
-const sanityClient = require('@sanity/client');
+const { registerPlugin } = require('@scullyio/scully');
+const { httpGetJson } = require('@scullyio/scully');
+// const sanityClient = require('@sanity/client');
 
 
 const Routes = 'routes';
 
-const routesPlugin = async (route, config) => {
-  process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 1;
-  const client = sanityClient({
-    projectId: config.projectId,
-    dataset: config.dataset,
-    apiVersion: config.apiVersion,
-    useCdn: false
-  });
+const generateSanityUrl = (config) => {
+  return `https://${config.projectId}.api.sanity.io/${config.apiVersion}/data/query/${config.dataset}?query=`;
+}
 
-  return Promise.resolve(client.fetch('*[_type == "route"]'))
+const routesPlugin = async (route, config) => {
+  const url = `${generateSanityUrl(config)}*[_type == "route"]`;
+
+  return httpGetJson(url)
     .then(json => {
       const handledRoutes = [];
-
-      for (let item of json) {
+      for (let item of json.result) {
         let slug = item.slug.current.toString();
         if (slug[0] !== '/') {
           slug = '/' + slug;
@@ -28,9 +26,7 @@ const routesPlugin = async (route, config) => {
       }
 
       return handledRoutes;
-    });
-
-  
+    });  
 };
 
 // no validation implemented

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { ScullyLibModule } from '@scullyio/ng-lib';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -60,6 +61,7 @@ import { CardComponent } from './components/elements/card/card.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     ScullyLibModule,
     FlexLayoutModule,
     ReactiveComponentModule,
