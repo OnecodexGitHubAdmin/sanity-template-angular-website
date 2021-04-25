@@ -18,7 +18,6 @@
   "projects": {
     "web": { "tags": [] },
     "web-e2e": { "tags": [], "implicitDependencies": ["web"] },
-    "studio": { "tags": [] },
-    "utils": { "tags": [] }
+    "studio": { "tags": [] }
   }
 }

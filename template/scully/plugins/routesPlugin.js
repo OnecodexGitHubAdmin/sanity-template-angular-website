@@ -5,8 +5,13 @@ const { httpGetJson } = require('@scullyio/scully');
 
 const Routes = 'routes';
 
+const getApiVersion = () => {
+  const currenDate = new Date();
+  return `v${currenDate.toISOString().split('T')[0]}`;
+}
+
 const generateSanityUrl = (config) => {
-  return `https://${config.projectId}.api.sanity.io/${config.apiVersion}/data/query/${config.dataset}?query=`;
+  return `https://${config.projectId}.api.sanity.io/${getApiVersion()}/data/query/${config.dataset}?query=`;
 }
 
 const routesPlugin = async (route, config) => {

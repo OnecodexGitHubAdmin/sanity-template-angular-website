@@ -7,7 +7,6 @@ const routesConfig = {
   type: Routes,
       projectId: '<#< sanity.projectId >#>',
       dataset: '<#< sanity.dataset >#>',
-      apiVersion: 'v2021-03-25',
       useCdn: true
 }
 
@@ -34,12 +33,3 @@ export const config: ScullyConfig = {
   },
   proxyConfig: 'proxy.conf.js'
 };
-
-
-// puppeteerLaunchOptions: {
-  //   args: [
-  //     '--proxy-server=https://<#< sanity.projectId >#>.api.sanity.io',
-  //     // Use proxy for localhost URLs
-  //     '--proxy-bypass-list=https://<#< sanity.projectId >#>.api.sanity.io',
-  //   ]
-  // },

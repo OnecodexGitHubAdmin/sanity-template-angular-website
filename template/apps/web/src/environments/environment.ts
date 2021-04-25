@@ -7,9 +7,11 @@ export const environment = {
   sanity: {
     projectId: '<#< sanity.projectId >#>',
     dataset: '<#< sanity.dataset >#>',
-    apiVersion: '2021-03-25',
     useCdn: true
   },
+  web: {
+    url: '<#< deployments.web.url >#>'
+  }
 };
 
 /*
