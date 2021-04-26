@@ -4,12 +4,12 @@
     <a *ngFor="let item of items" [routerLink]="[item.slug.current]">{{ item.title | uppercase }}</a>
   </div>
     <div fxHide.lt-md="true" class="cart" id="cart" *ngIf="addShoppingCardIcon">
-      <img src="assets/Shopping-Cart.svg"/>
+      <img src="assets/Shopping-Cart.svg" alt="shopping cart"/>
       <span class="badge" *ngIf="shoppingCart?.length">{{shoppingCart.length}}</span>
     </div>
   <div fxHide.gt-sm="true" fxLayout="row" fxLayoutGap="15px">
       <div class="cart" *ngIf="addShoppingCardIcon">
-        <img src="assets/Shopping-Cart.svg"/>
+        <img src="assets/Shopping-Cart.svg" alt="shopping cart"/>
         <span class="badge" *ngIf="shoppingCart?.length">{{shoppingCart.length}}</span>
       </div>
     <div id="menu-toggle" [class.open]="showMenu" (click)="showMenu = !showMenu">

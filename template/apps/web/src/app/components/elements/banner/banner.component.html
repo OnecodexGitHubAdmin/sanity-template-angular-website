@@ -3,7 +3,7 @@
   <img *ngIf="imageUrl" [src]="imageUrl" [alt]="banner.image?.alt">
   <div class="box" *ngIf="banner.title || banner.subtitle || banner.description || banner.ctas?.length">
     <h1>{{banner.title | uppercase}}</h1>
-    <h3>{{banner.subtitle}}</h3>
+    <h2>{{banner.subtitle}}</h2>
     <div fxLayout="row" fxLayoutAlign="space-evenly start">
       <template-button *ngFor="let cta of banner.ctas" [route]="cta.link" [title]="cta.title"></template-button>
     </div>

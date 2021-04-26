@@ -1,10 +1,64 @@
-# Template
+# Angular Starter Template For Sanity.io
 
-This project was generated using [Nx](https://nx.dev).
+This project is an angular starter template for [sanity.io](https://sanity.io).
+It can be used as a website, blog or even a web shop. All the different types are prepared as show case.
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+<p style="text-align: center;"><img src="https://github.com/OnecodexGitHubAdmin/sanity-template-angular-website/raw/master/assets/website.png?raw=true" width="450"></p>
 
-🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**
+## Structure
+
+The project is split into two different applications (in the apps folder).
+<p style="text-align: center;"><img src="https://github.com/OnecodexGitHubAdmin/sanity-template-angular-website/raw/master/assets/structure.png?raw=true" width="300"></p>
+
+The studio app is for defining and configure your types, pages and products.
+The web app is the angular client. 
+There's also a folder web-e2e which you can use for creating cypress e2e tests for the angular app.
+
+## Add a new sanity type (schema: like a product, page or blog)
+If you want to create or edit types. You can navigate to the studio/schemas folder.
+Here you'll find documents and objects.
+Documents define (document-) types like pages, blogs, products or similar.
+In the objects folder you can find elements which you can use inside the different document types.
+You can simply create the types you need.
+For further information see [Sanity.io Schema Types Documentation](https://www.sanity.io/docs/schema-types)
+
+For the newly created type you generate a new component in src/app/components/elements. I recommend using nx for that (se documentation below), since you're inside an nx workspace.
+<p style="text-align: center;"><img src="https://github.com/OnecodexGitHubAdmin/sanity-template-angular-website/raw/master/assets/web-elements.png?raw=true" width="300"></p>
+
+Your new component must extend the DynamicComponent interface and implement the data input property which is defined as a type that extends SanityType interface.
+<p style="text-align: center;"><img src="https://github.com/OnecodexGitHubAdmin/sanity-template-angular-website/raw/master/assets/angular-component.png?raw=true" width="450"></p>
+
+Now you need to introduce your newly generated dynamic component to the resolvers.
+If your element is a document type, you need to introduce it to the content component:
+<p style="text-align: center;"><img src="https://github.com/OnecodexGitHubAdmin/sanity-template-angular-website/raw/master/assets/content-component-location.png?raw=true" width="300"></p>
+And implement the new case:
+<p style="text-align: center;"><img src="https://github.com/OnecodexGitHubAdmin/sanity-template-angular-website/raw/master/assets/content-component.png?raw=true" width="300"></p>
+
+**Please also ensure that you have included the new document type in the fetchContent method in sanity.service.ts **
+Therefore you should have a look into [Sanity GROQ queries](https://www.sanity.io/docs/query-cheat-sheet)
+
+## Run your project locally
+For tesing your changes you can always run the apps locally using:
+
+`serve:all`
+
+since you're in an nx workspace this will bootstrap both applications (studio and web).
+
+**Please note that you need to initially run 'npm i' or 'yarn i' in the root folder and 'sanity install' in /apps/studio**
+
+If you don't want to use netlify for the web app. You can also generate the static site locally or on any build server. Therefore navigate to apps/web and run:
+`npm run build`
+and then
+`npm run scully`
+This will generate static files int dist/static which you can then copy to any server.
+
+
+If you don't want to deploy sanity studio to netlify you can simply navigate to apps/studio and run:
+`npm run build`
+Although I didn't test this, you should also be able to copy this to your server
+
+
+## Nx workspace
 
 ## Quick Start & Documentation
 
@@ -13,29 +67,6 @@ This project was generated using [Nx](https://nx.dev).
 [10-minute video showing all Nx features](https://nx.dev/angular/getting-started/what-is-nx)
 
 [Interactive Tutorial](https://nx.dev/angular/tutorial/01-create-application)
-
-## Adding capabilities to your workspace
-
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
-
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
-
-Below are our core plugins:
-
-- [Angular](https://angular.io)
-  - `ng add @nrwl/angular`
-- [React](https://reactjs.org)
-  - `ng add @nrwl/react`
-- Web (no framework frontends)
-  - `ng add @nrwl/web`
-- [Nest](https://nestjs.com)
-  - `ng add @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `ng add @nrwl/express`
-- [Node](https://nodejs.org)
-  - `ng add @nrwl/node`
-
-There are also many [community plugins](https://nx.dev/nx-community) you could add.
 
 ## Generate an application
 
@@ -53,17 +84,9 @@ Run `ng g @nrwl/angular:lib my-lib` to generate a library.
 
 Libraries are shareable across libraries and applications. They can be imported from `@template/mylib`.
 
-## Development server
-
-Run `ng serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
 ## Code scaffolding
 
 Run `ng g component my-component --project=my-app` to generate a new component.
-
-## Build
-
-Run `ng build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
 
@@ -83,16 +106,8 @@ Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 
 ## Further help
 
-Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
+If you have any questions regarding this template please [write me an email](mailto:magnus.wolf@onecodex.ch).
 
-## ☁ Nx Cloud
+For questions regarding Sanity, visit the [Sanity.io Documentation](https://www.sanity.io/docs) to learn more.
 
-### Computation Memoization in the Cloud
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.
+For questions regarding Nx, visit the [Nx Documentation](https://nx.dev/angular) to learn more.
