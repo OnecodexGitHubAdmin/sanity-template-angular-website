@@ -122,7 +122,7 @@ export class SanityService {
     const client = this.createClient();
     const imageUrlBuilder = require('@sanity/image-url');
     const builder = imageUrlBuilder(client);
-    return builder.image(ref);
+    return builder.image(ref)?.url();
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -156,7 +156,7 @@ export class SanityService {
     };
 
     let baseUrl = `${window.location.origin}/api/`;
-    if (window.location.href.startsWith(environment.web.url)) {
+    if (window.location.href.startsWith(environment.web.url) || window.location.href.startsWith('http://localhost:4200')) {
       baseUrl = `https://${environment.sanity.projectId}.api.sanity.io/`;
     }
     return `${baseUrl}${config.apiVersion}/data/query/${config.dataset}?query=`;

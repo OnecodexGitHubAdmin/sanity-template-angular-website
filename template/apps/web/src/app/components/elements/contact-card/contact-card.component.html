@@ -1,13 +1,9 @@
 <div fxLayout="column" fxLayoutAlign="start center">
   <div class="card" fxLayout="column" fxLayoutAlign="start center" fxFlexOffset="50px">
     <h2 *ngIf="data.title">{{data.title}}</h2>
-    <ng-container  *ngFor="let item of data.text">
-      <template-block *ngIf="item._type === 'block' || item._type === 'code'" [data]="item"></template-block>
-      <template-figure *ngIf="item._type === 'figure'" [data]="item"></template-figure>
-      <template-embed-html *ngIf="item._type === 'embedHTML'" [data]="item"></template-embed-html>
-    </ng-container>
+    <template-portable-text *ngFor="let item of data.text" [item]="item"></template-portable-text>
     <div fxLayout="row" fxLayoutAlign="space-evenly start">
-      <template-button *ngFor="let cta of data.ctas" [route]="cta.link" [title]="cta.title"></template-button>
+      <template-button *ngFor="let cta of data.ctas" [route]="cta.link" [title]="cta.title" [inverse]="true"></template-button>
     </div>
     <iframe *ngIf="data.map" [src]="sanitizeUrl(data.map)" width="600" height="450" frameborder="0" allowfullscreen="" marginheight="0" marginwidth="0"></iframe>
   </div>

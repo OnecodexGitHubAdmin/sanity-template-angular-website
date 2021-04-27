@@ -4,5 +4,5 @@
   <div>
     <template-badge *ngFor="let tag of post.tags" [tag]="tag"></template-badge>
   </div>
-  <template-button *ngIf="post.route?.current" [route]="post.route.current" [title]="'Read more'"></template-button>
+  <template-button *ngIf="post.route?.current" [route]="post.route.current" [title]="'Read more'" [inverse]="true"></template-button>
 </div>

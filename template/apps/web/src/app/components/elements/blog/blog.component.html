@@ -5,9 +5,5 @@
     <template-badge *ngFor="let tag of data.tags" [tag]="tag"></template-badge>
   </div>
   <p>{{data.introduction}}</p>
-  <ng-container  *ngFor="let item of data.content">
-    <template-block *ngIf="item._type === 'block' || item._type === 'code'" [data]="item"></template-block>
-    <template-figure *ngIf="item._type === 'figure'" [data]="item"></template-figure>
-    <template-embed-html *ngIf="item._type === 'embedHTML'" [data]="item"></template-embed-html>
-  </ng-container>
+  <template-portable-text *ngFor="let item of data.content" [item]="item"></template-portable-text>
 </div>

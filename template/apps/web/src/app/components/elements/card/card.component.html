@@ -4,13 +4,9 @@
       <img *ngIf="imageUrl" [src]="imageUrl"/>
       <h2 *ngIf="card.title">{{card.title}}</h2>
       <h3 *ngIf="card.subtitle">{{card.subtitle}}</h3>
-      <ng-container  *ngFor="let item of card.text">
-        <template-block *ngIf="item._type === 'block' || item._type === 'code'" [data]="item"></template-block>
-        <template-figure *ngIf="item._type === 'figure'" [data]="item"></template-figure>
-        <template-embed-html *ngIf="item._type === 'embedHTML'" [data]="item"></template-embed-html>
-      </ng-container>
+      <template-portable-text *ngFor="let item of card.text" [item]="item"></template-portable-text>
       <div fxLayout="row" fxLayoutAlign="space-evenly start">
-        <template-button *ngFor="let cta of card.ctas" [route]="cta.link" [title]="cta.title"></template-button>
+        <template-button *ngFor="let cta of card.ctas" [route]="cta.link" [title]="cta.title" [inverse]="true"></template-button>
       </div>
       <div fxLayout="row" fxLayoutAlign="space-evenly start">
         <template-badge *ngFor="let tag of card.tags" [tag]="tag"></template-badge>

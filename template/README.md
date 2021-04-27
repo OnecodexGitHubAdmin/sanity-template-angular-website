@@ -5,6 +5,15 @@ It can be used as a website, blog or even a web shop. All the different types ar
 
 <p style="text-align: center;"><img src="https://github.com/OnecodexGitHubAdmin/sanity-template-angular-website/raw/master/assets/website.png?raw=true" width="450"></p>
 
+## Tooling and technologies
+* NX
+* Angular
+* NgRx
+* Scully
+* Sanity
+
+You can easily extend the project with Tailwind CSS, Material or others as usual in angular projects
+
 ## Structure
 
 The project is split into two different applications (in the apps folder).

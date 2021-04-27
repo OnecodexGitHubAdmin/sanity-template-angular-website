@@ -8,6 +8,10 @@ a {
 }
 
 .cart {
+  &:hover {
+    cursor: pointer;
+  }
+  
   img {
     height: 36px;
     width: 36px;

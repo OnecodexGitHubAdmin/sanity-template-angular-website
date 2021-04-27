@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { ScullyLibModule } from '@scullyio/ng-lib';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ActionReducerMap, MetaReducer, StoreModule } from '@ngrx/store';
+import { ReactiveComponentModule } from '@ngrx/component';
 
 import { AppComponent } from './app.component';
 import { ComponentTemplateComponent } from './components/component-template/component-template.component';
@@ -27,10 +29,18 @@ import { ProductCollectionComponent } from './components/elements/product-collec
 import { ProductComponent } from './components/elements/product/product.component';
 import { ProductCardComponent } from './components/elements/product-card/product-card.component';
 import { shoppingCartReducer } from './store/reducers/shopping-cart.reducer';
-import { StoreModule } from '@ngrx/store';
-import { ReactiveComponentModule } from '@ngrx/component';
 import { ContactCardComponent } from './components/elements/contact-card/contact-card.component';
 import { CardComponent } from './components/elements/card/card.component';
+import { ShoppingCartComponent } from './components/elements/shopping-cart/shopping-cart.component';
+import { storageShoppingCartMetaReducer } from './store/reducers/storage-shopping-cart-metareducer';
+import { ShoppingCartStore } from './models/store/shopping-cart-store';
+import { PortableTextComponent } from './components/elements/portable-text/portable-text.component';
+
+export const reducers: ActionReducerMap<ShoppingCartStore> = {
+  shoppingCart: shoppingCartReducer
+};
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const metaReducers: MetaReducer<any>[] = [storageShoppingCartMetaReducer];
 
 @NgModule({
   declarations: [
@@ -57,6 +67,8 @@ import { CardComponent } from './components/elements/card/card.component';
     ProductCardComponent,
     ContactCardComponent,
     CardComponent,
+    ShoppingCartComponent,
+    PortableTextComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,7 +77,7 @@ import { CardComponent } from './components/elements/card/card.component';
     ScullyLibModule,
     FlexLayoutModule,
     ReactiveComponentModule,
-    StoreModule.forRoot({ shoppingCart: shoppingCartReducer }),
+    StoreModule.forRoot(reducers, { metaReducers })
   ],
   providers: [],
   bootstrap: [AppComponent],

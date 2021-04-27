@@ -5,7 +5,7 @@
     <h1>{{banner.title | uppercase}}</h1>
     <h2>{{banner.subtitle}}</h2>
     <div fxLayout="row" fxLayoutAlign="space-evenly start">
-      <template-button *ngFor="let cta of banner.ctas" [route]="cta.link" [title]="cta.title"></template-button>
+      <template-button *ngFor="let cta of banner.ctas" [route]="cta.link" [title]="cta.title" [inverse]="true"></template-button>
     </div>
   </div>
 </div>

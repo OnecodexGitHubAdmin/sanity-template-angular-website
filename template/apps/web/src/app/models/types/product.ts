@@ -6,6 +6,7 @@ import { Page } from './page';
 import { Slug } from './slug';
 
 export interface Product extends Page {
+  _id: string;
   productDescription: (Block | Figure | EmbedHtml)[];
   image: LoadedImage;
   route: Slug;

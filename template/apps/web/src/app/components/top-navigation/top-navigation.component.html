@@ -3,15 +3,17 @@
   <div fxHide.lt-md="true" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px">
     <a *ngFor="let item of items" [routerLink]="[item.slug.current]">{{ item.title | uppercase }}</a>
   </div>
-    <div fxHide.lt-md="true" class="cart" id="cart" *ngIf="addShoppingCardIcon">
+    <div fxHide.lt-md="true" class="cart" id="cart" *ngIf="addShoppingCardIcon" (click)="showCart = !showCart">
       <img src="assets/Shopping-Cart.svg" alt="shopping cart"/>
-      <span class="badge" *ngIf="shoppingCart?.length">{{shoppingCart.length}}</span>
+      <span class="badge" *ngIf="amount > 0">{{amount}}</span>
     </div>
+    <template-shopping-cart [cart]="shoppingCart" [show]="showCart"></template-shopping-cart>
   <div fxHide.gt-sm="true" fxLayout="row" fxLayoutGap="15px">
-      <div class="cart" *ngIf="addShoppingCardIcon">
+      <div class="cart" *ngIf="addShoppingCardIcon" (click)="showCart = !showCart">
         <img src="assets/Shopping-Cart.svg" alt="shopping cart"/>
-        <span class="badge" *ngIf="shoppingCart?.length">{{shoppingCart.length}}</span>
+        <span class="badge" *ngIf="amount > 0">{{amount}}</span>
       </div>
+      <template-shopping-cart [cart]="shoppingCart" [show]="showCart"></template-shopping-cart>
     <div id="menu-toggle" [class.open]="showMenu" (click)="showMenu = !showMenu">
       <div id="hamburger">
         <span></span>

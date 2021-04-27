@@ -1,0 +1,13 @@
+<div id="cart-container" fxFlex="450px"  fxFlex.lt-md="100"  *ngIf="show">
+  <div class="card-entry" *ngFor="let item of cart" fxLayout="row" fxLayoutGap="15px">
+    <img height="64px" [src]="item.product.image.asset.url"/>
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <strong>{{ item.product.title }}</strong>
+      <div fxLayout="row" fxLayoutGap="10px">
+        <span class="amount-btn" (click)="decrease(item.product)">-</span>
+        <span fxFlex="15px">{{ item.amount }}</span>
+        <span class="amount-btn" (click)="increase(item.product)">+</span>
+      </div>
+    </div>
+  </div>
+</div>

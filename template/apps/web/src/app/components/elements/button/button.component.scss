@@ -4,10 +4,19 @@ div {
 
   .button {
     padding: 5px;
-    border: 2px solid var(--accent);
+    border: 2px solid var(--primary);
     text-align: center;
     vertical-align: middle;
     text-decoration: none;
-    color: var(--accent);
+    color: var(--primary);
+
+    &.inverse {
+      border: 2px solid var(--accent);
+      color: var(--accent);
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

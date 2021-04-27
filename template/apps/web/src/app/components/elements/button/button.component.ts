@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'template-button',
@@ -7,5 +7,13 @@ import { Component, Input } from '@angular/core';
 })
 export class ButtonComponent {
   @Input() route: string;
+  @Input() inverse: boolean;
   @Input() title: string;
+  @Input() btnClick: EventEmitter<void>;
+
+  clickBtn(): void {
+    if (this.btnClick) {
+      this.btnClick.emit(null);
+    }
+  }
 }

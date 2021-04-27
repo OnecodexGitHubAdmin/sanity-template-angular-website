@@ -1,5 +1,5 @@
-import { Product } from '../types/product';
+import { ShoppingCartItems } from './shopping-cart-items';
 
 export interface ShoppingCartStore {
-  shoppingCart: Product[];
+  shoppingCart: ReadonlyArray<ShoppingCartItems>;
 }
