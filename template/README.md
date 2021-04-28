@@ -6,11 +6,12 @@ It can be used as a website, blog or even a web shop. All the different types ar
 <p style="text-align: center;"><img src="https://github.com/OnecodexGitHubAdmin/sanity-template-angular-website/raw/master/assets/website.png?raw=true" width="450"></p>
 
 ## Tooling and technologies
-* NX
 * Angular
+* Netlify
 * NgRx
-* Scully
+* NX
 * Sanity
+* Scully
 
 You can easily extend the project with Tailwind CSS, Material or others as usual in angular projects
 
@@ -47,6 +48,9 @@ And implement the new case:
 Therefore you should have a look into [Sanity GROQ queries](https://www.sanity.io/docs/query-cheat-sheet)
 
 ## Run your project locally
+
+**Before you can develop locally, you need to add your local angular client url (usually: https://localhost:4200) to the CORS policies in your sanity.io project. This can be done in the administration page at [sanity.io](https://sanity.io)**
+
 For tesing your changes you can always run the apps locally using:
 
 `serve:all`
