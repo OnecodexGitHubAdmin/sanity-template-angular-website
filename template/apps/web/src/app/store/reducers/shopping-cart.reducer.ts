@@ -18,7 +18,7 @@ export const addOrUpdateShoppingCartItem = (state: ReadonlyArray<ShoppingCartIte
       return { ...existingItem };
     })];
   } else {
-    return [{ product: item, amount: 1 }];
+    return [...state, { product: item, amount: 1 }];
   }
 };
 
