@@ -47,6 +47,9 @@ And implement the new case:
 Therefore you should have a look into [Sanity GROQ queries](https://www.sanity.io/docs/query-cheat-sheet)
 
 ## Run your project locally
+
+**Before you can develop locally, you need to add your local angular client url (usually: https://localhost:4200) to the CORS policies in your sanity.io project. This can be done in the administration page at [sanity.io](https://sanity.io)**
+
 For tesing your changes you can always run the apps locally using:
 
 `serve:all`
