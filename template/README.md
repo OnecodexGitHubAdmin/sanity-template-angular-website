@@ -51,7 +51,15 @@ Therefore you should have a look into [Sanity GROQ queries](https://www.sanity.i
 
 **Before you can develop locally, you need to add your local angular client url (usually: https://localhost:4200) to the CORS policies in your sanity.io project. This can be done in the administration page at [sanity.io](https://sanity.io)**
 
-For tesing your changes you can always run the apps locally using:
+1. **Install dependencies with `npm install` in the root folder.**.
+
+2. **Run `sanity install` in `/apps/studio`** This will install the necessary dependencies for Sanity Studio.
+
+4. **Run `npm run serve:all` in `/`**. This will start the development servers for the Angular frontend and Sanity Studio.
+
+5. **Run `npm run build` in `/apps/web` and then `npm run scully`**. This will build the Angular frontend and generate a static site which can be deployed anywhere (if you're not using netlify).
+
+For testing your changes you can always run the apps locally using:
 
 `serve:all`
 
