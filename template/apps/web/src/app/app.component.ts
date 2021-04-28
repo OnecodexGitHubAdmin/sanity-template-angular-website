@@ -3,7 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { NavigationEnd } from '@angular/router';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { filter, map, switchMap, tap } from 'rxjs/operators';
+import { filter, switchMap, tap } from 'rxjs/operators';
 import { SiteConfig } from './models/types/site-config';
 import { SanityService } from './services/sanity.service';
 
