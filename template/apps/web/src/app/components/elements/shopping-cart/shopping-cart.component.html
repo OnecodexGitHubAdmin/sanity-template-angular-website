@@ -1,12 +1,12 @@
-<div id="cart-container" fxFlex="450px"  fxFlex.lt-md="100"  *ngIf="show">
-  <div class="card-entry" *ngFor="let item of cart" fxLayout="row" fxLayoutGap="15px">
-    <img height="64px" [src]="item.product.image.asset.url"/>
-    <div fxLayout="column" fxLayoutAlign="center center">
-      <strong>{{ item.product.title }}</strong>
-      <div fxLayout="row" fxLayoutGap="10px">
-        <span class="amount-btn" (click)="decrease(item.product)">-</span>
-        <span fxFlex="15px">{{ item.amount }}</span>
-        <span class="amount-btn" (click)="increase(item.product)">+</span>
+<div class="absolute top-14 right-0 p-8 bg-accent lg:w-96 w-full" *ngIf="show">
+  <div class="p-4 border-b-2 border-primary flex flex-row space-x-4" *ngFor="let item of cart">
+    <img class="h-24 w-1/3 object-cover" [src]="item.product.image.asset.url"/>
+    <div class="flex flex-grow flex-col justify-center items-center">
+      <strong class="text-center">{{ item.product.title }}</strong>
+      <div class="flex flex-row space-x-4">
+        <span class="cursor-pointer" (click)="decrease(item.product)">-</span>
+        <span>{{ item.amount }}</span>
+        <span class="cursor-pointer" (click)="increase(item.product)">+</span>
       </div>
     </div>
   </div>

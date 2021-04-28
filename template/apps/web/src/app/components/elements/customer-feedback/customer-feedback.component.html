@@ -1,6 +1,6 @@
 <ng-container *ngIf="$feedbackObservable | async as feebackList">
-  <div *ngFor="let feedback of feebackList; let i = index" [class.hidden]="i !== currentIndex">
-    <img *ngIf="feedback.image?.asset" [src]="feedback.image.asset.url" [alt]="feedback.image.alt"/>
+  <div class="p-10 text-center bg-primary text-accent flex flex-col items-center space-y-4" *ngFor="let feedback of feebackList; let i = index" [class.hidden]="i !== currentIndex">
+    <img class="h-28 w-28 object-cover rounded-full" *ngIf="feedback.image?.asset" [src]="feedback.image.asset.url" [alt]="feedback.image.alt"/>
     <p>«{{ feedback.text }}»</p>
     <p>{{ feedback.customer }}</p>
     <p>
@@ -8,3 +8,4 @@
     </p>
   </div>
 </ng-container>
+

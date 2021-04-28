@@ -1,5 +1,5 @@
 <ng-container *ngIf="$productsObservable | async as products">
-  <div fxLayout="row wrap" fxLayoutAlign="start stretch" fxLayoutGap="50px">
+  <div class="p-10 flex flex-row justify-start items-start space-x-10 flex-wrap">
     <template-product-card
       *ngFor="let product of products"
       [product]="product"

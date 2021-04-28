@@ -1,6 +1,6 @@
-<div fxLayout="column" fxLayoutAlign="space-between center">
-  <h1>{{post.title}}</h1>
-  <p>{{post.introduction}}</p>
+<div class="flex flex-col justify-between items-center space-y-6 bg-primary opacity-90 p-10 h-full">
+  <h1 class="font-semibold text-center text-2xl text-accent">{{post.title}}</h1>
+  <p class="text-accent">{{post.introduction}}</p>
   <div>
     <template-badge *ngFor="let tag of post.tags" [tag]="tag"></template-badge>
   </div>
