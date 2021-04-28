@@ -1,12 +1,13 @@
 <ng-container *ngIf="$contentObservable | async as config">
   <div class="container">
     <header fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.lt-lg="end center">
-      <a class="icon" [href]="config.url || '.'" fxLayout="row" fxLayoutGap="25px" fxLayoutAlign="start center">
+      <a class="icon" [href]="config.url || '.'" fxLayout="row" fxLayoutGap="5px" fxLayoutGap.gt-sm="25px" fxLayoutAlign="start center">
         <img *ngIf="config.logo?.asset?.url"  [class.lt-md]="mobile"
           [alt]="config.logo.alt"
           [src]="config.logo?.asset?.url"    
         />
-        <h1 *ngIf="config.title">{{ config.title }}</h1>
+        <h1 fxShow="false" fxShow.gt-sm="true" *ngIf="config.title">{{ config.title }}</h1>
+        <h2 fxShow="true" fxShow.gt-sm="false" *ngIf="config.title">{{ config.title }}</h2>
       </a>
       <template-top-navigation [items]="config.mainNavigation" [addShoppingCardIcon]="config.addShoppingCardIcon"></template-top-navigation>
     </header>
