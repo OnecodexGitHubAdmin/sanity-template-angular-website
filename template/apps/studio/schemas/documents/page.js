@@ -32,7 +32,6 @@ export default {
         { type: 'customerFeedback' },
         { type: 'divider' },
         { type: 'figure' },
-        { type: 'portableText' },
         { type: 'blogCollection' },
         { type: 'productCollection' },
       ],
